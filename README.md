@@ -2,9 +2,9 @@
 
 A comprehensive security scanner for Cloud & DevOps environments, written in Go.
 
-[![Go Report Card](https://goreportcard.com/badge/github.com/yourusername/gosecscan)](https://goreportcard.com/report/github.com/yourusername/gosecscan)
+[![Go Report Card](https://goreportcard.com/badge/github.com/SUGAM-ARORA/gosecscan)](https://goreportcard.com/report/github.com/SUGAM-ARORA/gosecscan)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![GitHub release](https://img.shields.io/github/release/yourusername/gosecscan.svg)](https://github.com/yourusername/gosecscan/releases)
+[![GitHub release](https://img.shields.io/github/release/SUGAM-ARORA/gosecscan.svg)](https://github.com/SUGAM-ARORA/gosecscan/releases)
 
 ## 🌟 Features
 
@@ -39,7 +39,7 @@ A comprehensive security scanner for Cloud & DevOps environments, written in Go.
 
 ```bash
 # Install GosecScan
-go install github.com/yourusername/gosecscan@latest
+go install github.com/SUGAM-ARORA/gosecscan@latest
 
 # Run a quick scan
 gosecscan scan
@@ -72,14 +72,14 @@ Then open http://localhost:3000 in your browser.
 ### From Source
 
 ```bash
-git clone https://github.com/yourusername/gosecscan.git
+git clone https://github.com/SUGAM-ARORA/gosecscan.git
 cd gosecscan
 go build
 ```
 
 ## 📖 Documentation
 
-Visit our [documentation](https://github.com/yourusername/gosecscan/wiki) for:
+Visit our [documentation](https://github.com/SUGAM-ARORA/gosecscan/wiki) for:
 - Detailed installation instructions
 - Configuration options
 - API reference
@@ -104,11 +104,11 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🌟 Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=yourusername/gosecscan&type=Date)](https://star-history.com/#yourusername/gosecscan&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=SUGAM-ARORA/gosecscan&type=Date)](https://star-history.com/#SUGAM-ARORA/gosecscan&Date)
 
 ## 📫 Contact
 
-- Create an issue: [https://github.com/yourusername/gosecscan/issues](https://github.com/yourusername/gosecscan/issues)
+- Create an issue: [https://github.com/SUGAM-ARORA/gosecscan/issues](https://github.com/SUGAM-ARORA/gosecscan/issues)
 - Follow on Twitter: [@gosecscan](https://twitter.com/gosecscan)
 
 ## 🙏 Acknowledgments
