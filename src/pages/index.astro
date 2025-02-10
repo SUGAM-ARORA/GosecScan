@@ -1,0 +1,227 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const scanResults = {
+  cloud: {
+    aws: { critical: 2, high: 3, medium: 5 },
+    azure: { critical: 1, high: 2, medium: 3 },
+    gcp: { critical: 0, high: 1, medium: 2 }
+  },
+  containers: {
+    vulnerabilities: 12,
+    misconfigurations: 5
+  },
+  kubernetes: {
+    benchmarks: 85,
+    issues: 7
+  }
+};
+---
+
+<Layout title="GosecScan Dashboard">
+  <main>
+    <h1>GosecScan <span class="version">v1.0.0</span></h1>
+    
+    <div class="dashboard-grid">
+      <section class="cloud-section">
+        <h2>Cloud Security Status</h2>
+        <div class="cloud-providers">
+          <div class="provider aws">
+            <h3>AWS</h3>
+            <div class="metrics">
+              <div class="metric critical">
+                <span class="count">{scanResults.cloud.aws.critical}</span>
+                <span class="label">Critical</span>
+              </div>
+              <div class="metric high">
+                <span class="count">{scanResults.cloud.aws.high}</span>
+                <span class="label">High</span>
+              </div>
+              <div class="metric medium">
+                <span class="count">{scanResults.cloud.aws.medium}</span>
+                <span class="label">Medium</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="provider azure">
+            <h3>Azure</h3>
+            <div class="metrics">
+              <div class="metric critical">
+                <span class="count">{scanResults.cloud.azure.critical}</span>
+                <span class="label">Critical</span>
+              </div>
+              <div class="metric high">
+                <span class="count">{scanResults.cloud.azure.high}</span>
+                <span class="label">High</span>
+              </div>
+              <div class="metric medium">
+                <span class="count">{scanResults.cloud.azure.medium}</span>
+                <span class="label">Medium</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="provider gcp">
+            <h3>GCP</h3>
+            <div class="metrics">
+              <div class="metric critical">
+                <span class="count">{scanResults.cloud.gcp.critical}</span>
+                <span class="label">Critical</span>
+              </div>
+              <div class="metric high">
+                <span class="count">{scanResults.cloud.gcp.high}</span>
+                <span class="label">High</span>
+              </div>
+              <div class="metric medium">
+                <span class="count">{scanResults.cloud.gcp.medium}</span>
+                <span class="label">Medium</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="container-section">
+        <h2>Container Security</h2>
+        <div class="container-metrics">
+          <div class="metric">
+            <span class="count">{scanResults.containers.vulnerabilities}</span>
+            <span class="label">Vulnerabilities</span>
+          </div>
+          <div class="metric">
+            <span class="count">{scanResults.containers.misconfigurations}</span>
+            <span class="label">Misconfigurations</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="kubernetes-section">
+        <h2>Kubernetes Security</h2>
+        <div class="k8s-metrics">
+          <div class="metric">
+            <span class="count">{scanResults.kubernetes.benchmarks}</span>
+            <span class="label">Benchmark Score</span>
+          </div>
+          <div class="metric warning">
+            <span class="count">{scanResults.kubernetes.issues}</span>
+            <span class="label">Issues Found</span>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  main {
+    margin: auto;
+    padding: 2rem;
+    width: 100%;
+    max-width: 1400px;
+    color: white;
+  }
+
+  h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .version {
+    font-size: 1rem;
+    background: rgba(var(--accent-light), 0.1);
+    padding: 0.5rem 1rem;
+    border-radius: 999px;
+    color: rgb(var(--accent-light));
+  }
+
+  .dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  section {
+    background: rgba(var(--accent-dark), 0.2);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    border: 1px solid rgba(var(--accent-light), 0.1);
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: rgb(var(--accent-light));
+  }
+
+  .cloud-providers {
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  .provider {
+    background: rgba(var(--accent-dark), 0.3);
+    padding: 1rem;
+    border-radius: 0.5rem;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: white;
+  }
+
+  .metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 1rem;
+  }
+
+  .metric {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    background: rgba(var(--accent-dark), 0.2);
+  }
+
+  .count {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  .label {
+    font-size: 0.8rem;
+    opacity: 0.8;
+  }
+
+  .metric.critical .count {
+    color: #ff4444;
+  }
+
+  .metric.high .count {
+    color: #ffaa00;
+  }
+
+  .metric.medium .count {
+    color: #ffdd00;
+  }
+
+  .metric.warning .count {
+    color: #ffaa00;
+  }
+
+  .container-metrics,
+  .k8s-metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+  }
+</style>
